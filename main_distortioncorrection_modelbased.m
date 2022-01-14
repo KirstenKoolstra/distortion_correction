@@ -38,8 +38,8 @@ tvec      = ((-m/2*dt):dt:((m/2-1)*dt))';
 tvec_ph   = ((-n/2*dt):dt:((n/2-1)*dt))';
 
 %% Filter the k-space data
-y1 = filter_kspace(y1,0.5);
-y2 = filter_kspace(y2,0.5);
+y1 = filter_kspace(y1,filt);
+y2 = filter_kspace(y2,filt);
     
 %% Select slice from 3D acquisition
 IM1    = fftshift(fftshift(ifft3cc(y1),3),2);
